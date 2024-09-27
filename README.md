@@ -65,4 +65,4 @@ This project took two days for completion.
 ## 📌 Personal Situation
 This project was done as part of the AI Boocamp at BeCode.org. 
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/vriveraq/).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/rasmita-damaraju-33b577126/).
