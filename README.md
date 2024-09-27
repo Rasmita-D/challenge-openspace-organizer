@@ -32,7 +32,12 @@ This script runs everyday to re-assign everybody to a new seat.
 
 3. The script then prompts you to enter the number of tables and seats in your open space. Then, it reads the input file "new_colleagues.csv", and organizes your colleagues to random seat assignments. The resulting seating plan is displayed in your console and also saved to an "output.csv" file in your root directory. 
 
+4. You can reshuffle the assignments with new values of number of seats and tables as many times as you like if you are unhappy with the assignment. To reassign, answer 'Y' to the prompt "Do you want to change the number of tables, seats and reassign? Y/N: "
+
 ```python
+
+from utils import file_utils
+from utils.openspace import OpenSpace
 
 input_filepath = "new_colleagues.csv"
 output_filename = "output.csv"
@@ -56,7 +61,29 @@ open_space.store(output_filename)
 # display assignments in the terminal
 open_space.display()
 
+
+reassign=input("Do you want to change the number of tables,seats to reassign? Y/N: ")
+
+while reassign=='Y':
+    #Take the number of seats and tables as an input from the user
+    number_of_tables=int(input("Please enter number of tables: "))
+    number_ofseats=int(input("Please enter number of seats in each table: "))
+
+    # create an OpenSpace() 
+    open_space = OpenSpace(number_of_tables,number_ofseats)
+
+    # assign a colleague randomly to a table
+    open_space.organize(names)
+
+    # save the seat assigments to a new file
+    open_space.store(output_filename)
+
+    # display assignments in the terminal
+    open_space.display()
+
+    reassign=input("Do you want to change the number of tables, seats and reassign? Y/N: ")
 ```
+
 
 ## ⏱️ Timeline
 
