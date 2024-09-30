@@ -24,6 +24,21 @@ open_space.store(output_filename)
 open_space.display()
 
 
+new_members=[]
+if open_space.get_remaining()>0:
+    add_members=input("Do you want to add more members? Y/N: ")
+
+    if add_members=='Y':
+        new_members=input("Please enter the names separated by a comma: ")
+        list_new_members=new_members.split(",")
+        for i in list_new_members:
+            names.append(i)
+       
+        open_space.add_members(list_new_members)
+        open_space.display()
+        open_space.store(output_filename)
+
+
 reassign=input("Do you want to change the number of tables,seats to reassign? Y/N: ")
 
 while reassign=='Y':
@@ -35,7 +50,10 @@ while reassign=='Y':
     open_space = OpenSpace(number_of_tables,number_ofseats)
 
     # assign a colleague randomly to a table
-    open_space.organize(names)
+    if new_members!=[]:
+        open_space.organize(names)
+    else:
+        open_space.organize(names)
 
     # save the seat assigments to a new file
     open_space.store(output_filename)

@@ -60,4 +60,3 @@ class Table:
             if s.free == True:
                 left+=1
         return left
-
