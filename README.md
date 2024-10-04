@@ -20,6 +20,7 @@ This script runs everyday to re-assign everybody to a new seat.
 ├── output.csv
 └── README.md
 
+```
 ## 🛎️ Usage
 
 1. Clone the repository to your local machine.
